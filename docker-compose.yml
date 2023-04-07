@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=note_user
+      - MONGO_INITDB_ROOT_PASSWORD=12345678
+      - MONGO_INITDB_DATABASE=note_db
+#      - MONGO_DB_USERNAME=note_user
+#      - MONGO_DB_PASSWORD=12345678
+    volumes:
+      - mongo:/data/db
+    networks:
+      - mongodb_network
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongo:
+
+networks:
+  mongodb_network:

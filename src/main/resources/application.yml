@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: ${DB_USERNAME:note_user}
+      password: ${DB_PASSWORD:12345678}
+      database: ${DB_NAME:note_db}
+      port: ${DB_PORT:27017}
+      host: ${DB_HOST:0.0.0.0}
+      auto-index-creation: true
+
+swagger:
+  serverBaseUrl: ${SWAGGER_SERVER_BASE_URL:http://localhost:8080}

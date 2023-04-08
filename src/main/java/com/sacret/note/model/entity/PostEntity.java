@@ -18,6 +18,7 @@ public class PostEntity {
     @Id
     private String id;
 
+    @Field(name = "user_id")
     private String userId;
     private String content;
 

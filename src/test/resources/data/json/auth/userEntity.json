@@ -1,0 +1,6 @@
+{
+  "id": "some id",
+  "login": "test",
+  "password": "password",
+  "role": "ROLE_USER"
+}

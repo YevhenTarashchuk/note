@@ -1,0 +1,69 @@
+{
+  "content": [
+    {
+      "id": "64313a591a2cfc7f3b3d6c37",
+      "userId": "643133aa52a5bd57de8414e9",
+      "content": "version 5",
+      "createdAt": "2023-04-08T12:10:11",
+      "updatedAt": "2023-04-08T12:10:11",
+      "likeCount": 0
+    },
+    {
+      "id": "643139871a2cfc7f3b3d6c31",
+      "userId": null,
+      "content": "version 4",
+      "createdAt": "2023-04-08T11:10:11",
+      "updatedAt": "2023-04-08T11:10:11",
+      "likeCount": 2
+    },
+    {
+      "id": "643139861a2cfc7f3b3d6c2f",
+      "userId": "6431303b4f3f471b0652a9eb",
+      "content": "version 2",
+      "createdAt": "2023-04-08T10:53:11",
+      "updatedAt": "2023-04-08T10:53:11",
+      "likeCount": 1
+    },
+    {
+      "id": "643130e04f3f471b0652a9ed",
+      "userId": "643133aa52a5bd57de8414e9",
+      "content": "version 1",
+      "createdAt": "2023-04-08T09:53:11",
+      "updatedAt": "2023-04-08T09:53:11",
+      "likeCount": 2
+    },
+    {
+      "id": "643139871a2cfc7f3b3d6c30",
+      "userId": "643133aa52a5bd57de8414e9",
+      "content": "version 3",
+      "createdAt": "2023-04-08T09:10:11",
+      "updatedAt": "2023-04-08T09:10:11",
+      "likeCount": 0
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "empty": false,
+      "sorted": true,
+      "unsorted": false
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 20,
+    "paged": true,
+    "unpaged": false
+  },
+  "last": true,
+  "totalPages": 1,
+  "totalElements": 5,
+  "size": 20,
+  "number": 0,
+  "sort": {
+    "empty": false,
+    "sorted": true,
+    "unsorted": false
+  },
+  "first": true,
+  "numberOfElements": 5,
+  "empty": false
+}

@@ -11,3 +11,9 @@ spring:
 
 swagger:
   serverBaseUrl: ${SWAGGER_SERVER_BASE_URL:http://localhost:8080}
+
+security:
+  jwt:
+    secretKey: ${SECRET_KEY:9Sdyeei3eVadXxnGTxPXiTzgKVZth9p8Zwz9yCVr5JJLP2avvJ777}
+    tokenExpirationTime: 1440
+    refreshTokenExpTime: 1576800

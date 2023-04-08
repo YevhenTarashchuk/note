@@ -18,7 +18,6 @@ public class AuthWhiteListConfig {
                 "/v1/users/registrations",
                 "/v1/users/auth",
                 "/v1/users/auth/refresh-tokens",
-                "/v1/posts",
                 // -- swagger ui
                 "/swagger-resources",
                 "/documentation/swagger-ui.html",

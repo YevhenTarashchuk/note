@@ -2,6 +2,7 @@ package com.sacret.note.controller;
 
 import com.sacret.note.model.request.PostRequest;
 import com.sacret.note.model.response.PostResponse;
+import com.sacret.note.service.PostService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -16,16 +17,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.sacret.note.service.PostService;
 
 
-@Tag(name = "User post API")
+@Tag(name = "User post API: user authorization is required")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/v1/user/posts")
@@ -34,17 +33,8 @@ public class UserPostController {
 
     private final PostService postService;
 
-    @PostMapping
-    @Operation(description = "Create a new post")
-    public PostResponse createPost(
-            @Parameter(hidden = true) @RequestAttribute(required = false) String userId,
-            @RequestBody @Valid PostRequest request
-    ) {
-        return postService.createPost(request, userId);
-    }
-
     @GetMapping
-    @Operation(description = "Get user posts  - user authorization is required")
+    @Operation(description = "Get user posts")
     @Parameter(
             in = ParameterIn.QUERY, name = "page",
             schema = @Schema(type = "integer", defaultValue = "0")
@@ -62,7 +52,7 @@ public class UserPostController {
     }
 
     @PutMapping("/{postId}")
-    @Operation(description = "Update user post - user authorization is required")
+    @Operation(description = "Update user post")
     public PostResponse updatePost(
             @Parameter(hidden = true) @RequestAttribute String userId,
             @PathVariable String postId,
@@ -72,7 +62,7 @@ public class UserPostController {
     }
 
     @GetMapping("/{postId}")
-    @Operation(description = "Get user post - user authorization is required")
+    @Operation(description = "Get user post")
     public PostResponse getPost(
             @Parameter(hidden = true) @RequestAttribute String userId,
             @PathVariable String postId
@@ -81,12 +71,23 @@ public class UserPostController {
     }
 
     @DeleteMapping("/{postId}")
-    @Operation(description = "Delete user post - user authorization is required")
+    @Operation(description = "Delete user post")
     public ResponseEntity<Void> removePost(
             @Parameter(hidden = true) @RequestAttribute String userId,
             @PathVariable String postId
     ) {
         postService.removePost(postId, userId);
+        return ResponseEntity.noContent()
+                .build();
+    }
+
+    @PutMapping("/{postId}/likes")
+    @Operation(description = "Add or remove like")
+    public ResponseEntity<Void> updateLike(
+            @Parameter(hidden = true) @RequestAttribute String userId,
+            @PathVariable String postId
+    ) {
+        postService.updateLike(userId, postId);
         return ResponseEntity.noContent()
                 .build();
     }

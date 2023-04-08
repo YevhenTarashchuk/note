@@ -78,6 +78,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(authWhiteList).permitAll()
                         .requestMatchers(HttpMethod.POST, POST_PATH).permitAll()
+                        .requestMatchers(HttpMethod.GET, POST_PATH).permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

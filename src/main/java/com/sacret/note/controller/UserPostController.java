@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "User post API (authorization is required)")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/v1/user/posts")
+@RequestMapping("/v1/users/posts")
 @SecurityRequirement(name = "note")
 public class UserPostController {
 
